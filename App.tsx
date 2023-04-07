@@ -12,10 +12,18 @@ import React, {type PropsWithChildren} from 'react';
 import {View, StyleSheet, Text, FlatList, SafeAreaView} from 'react-native';
 import FeedPost from './src/components/FeedPost';
 import posts from './src/assets/data/post.json';
-import HomeScreen from './screens/HomeScreen';
+import HomeScreen from './src/screens/HomeScreen';
+import CommentsScreen from './src/screens/CommentsScreen';
+import ProfileScreen from './src/screens/ProfileScreen';
+import EditProfileScreen from './src/screens/EditProfileScreen';
 
 const App = () => {
-  return <HomeScreen />;
+  return (
+    //<HomeScreen />;
+    //<CommentsScreen />
+    //<ProfileScreen />
+    <EditProfileScreen />
+  );
 };
 
 export default App;

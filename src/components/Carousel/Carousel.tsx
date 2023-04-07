@@ -8,7 +8,7 @@ import {
   ViewToken,
 } from 'react-native';
 import React, {useState, useRef} from 'react';
-import DoublePressable from '../components/DoublePressable';
+import DoublePressable from '../DoublePressable';
 
 interface ICarousel {
   images: string[];

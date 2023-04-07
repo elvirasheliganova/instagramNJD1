@@ -26,3 +26,5 @@ export interface IComment {
   comment: string;
   user: IUser;
 }
+
+export type FieldValues = Record<string, any>;

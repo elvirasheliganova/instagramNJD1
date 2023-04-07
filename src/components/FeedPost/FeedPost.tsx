@@ -27,14 +27,15 @@ import styles from './styles';
 import Comment from '../Comment';
 import {IPost} from '../../types/models';
 import DoublePressable from '../DoublePressable';
-import Carousel from '../../Carousel';
+import Carousel from '../Carousel';
 import VideoPlayer from '../VideoPlayer';
 
 interface IFeedPost {
   post: IPost;
+  isVisible: boolean;
 }
 
-const FeedPost = ({post}: IFeedPost) => {
+const FeedPost = ({post, isVisible}: IFeedPost) => {
   const [isDesriptionExpanded, setIsDescriptionExpanded] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
 
@@ -56,10 +57,11 @@ const FeedPost = ({post}: IFeedPost) => {
   } else if (post.video) {
     content = (
       <DoublePressable onDoublePress={toggleIsLiked}>
-        <VideoPlayer uri={post.video} />
+        <VideoPlayer uri={post.video} paused={!isVisible} />
       </DoublePressable>
     );
   }
+
   return (
     <SafeAreaView style={{flex: 1}}>
       <View style={styles.post}>
