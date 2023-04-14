@@ -4,9 +4,14 @@ import user from '../../assets/data/user.json';
 import styles from './styles';
 import Button from '../../components/Button';
 import FeedPost from '../../components/FeedPost';
+import {useNavigation} from '@react-navigation/native';
+import {ProfileNavigationProp} from '../../navigation/types';
 
 const ProfileHeader = () => {
-  // console.warn(user.bio);
+  const navigation = useNavigation<ProfileNavigationProp>();
+  const navigateToEdit = () => {
+    navigation.navigate('Edit Profile');
+  };
   return (
     <SafeAreaView>
       <View style={styles.root}>
@@ -36,7 +41,7 @@ const ProfileHeader = () => {
 
         {/* Buttons */}
         <View style={styles.buttonsRow}>
-          <Button text="Edit Profile" onPress={() => console.warn('Edit')} />
+          <Button text="Edit Profile" onPress={navigateToEdit} />
           <Button text="Another Button" onPress={() => console.warn('Edit')} />
         </View>
       </View>

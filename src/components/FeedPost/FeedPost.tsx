@@ -29,6 +29,8 @@ import {IPost} from '../../types/models';
 import DoublePressable from '../DoublePressable';
 import Carousel from '../Carousel';
 import VideoPlayer from '../VideoPlayer';
+import {useNavigation} from '@react-navigation/native';
+import {FeedNavigationProp} from '../../navigation/types';
 
 interface IFeedPost {
   post: IPost;
@@ -41,6 +43,11 @@ const FeedPost = ({post, isVisible}: IFeedPost) => {
 
   const toggleDescriptionExpended = () => setIsDescriptionExpanded(v => !v);
   const toggleIsLiked = () => setIsLiked(v => !v);
+  const navigation = useNavigation<FeedNavigationProp>();
+  const navigateToUser = () =>
+    navigation.navigate('User Profile', {userId: post.user.id});
+  const navigateToComments = () =>
+    navigation.navigate('Comments', {postId: post.id});
 
   let content = null;
   if (post.image) {
@@ -74,10 +81,12 @@ const FeedPost = ({post, isVisible}: IFeedPost) => {
             }}
           />
 
-          <Text style={styles.username}>{post.user.username}</Text>
+          <Text onPress={navigateToUser} style={styles.username}>
+            {post.user.username}
+          </Text>
           <Entypo
             name="dots-three-horizontal"
-            size={fonts.size.m}
+            size={fonts.size.md}
             style={styles.threeDots}
           />
         </View>
@@ -136,7 +145,9 @@ const FeedPost = ({post, isVisible}: IFeedPost) => {
             onPress={toggleDescriptionExpended}>
             {isDesriptionExpanded ? 'Less' : 'More'}
           </Text>
-          <Text style={[styles.text, {color: colors.grey}]}>
+          <Text
+            onPress={navigateToComments}
+            style={[styles.text, {color: colors.grey}]}>
             View all 16 comments
           </Text>
           {post.comments.map(comment => (

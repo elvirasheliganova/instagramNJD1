@@ -12,7 +12,7 @@ import FeedPost from '../../components/FeedPost';
 import posts from '../../assets/data/post.json';
 
 const HomeScreen = () => {
-  const [activePostId, setactivePostId] = useState();
+  const [activePostId, setActivePostId] = useState();
 
   const viewabilityConfig: ViewabilityConfig = {
     itemVisiblePercentThreshold: 51,
@@ -20,7 +20,7 @@ const HomeScreen = () => {
 
   const onViewableItemsChanged = useRef(
     ({viewableItems}: {viewableItems: Array<ViewToken>}) => {
-      setactivePostId(viewableItems[0].item.id);
+      setActivePostId(viewableItems[0].item.id);
     },
   );
 
