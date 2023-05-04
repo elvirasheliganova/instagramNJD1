@@ -9,14 +9,11 @@
  */
 
 import React, {type PropsWithChildren} from 'react';
-import {View, StyleSheet, Text, FlatList, SafeAreaView} from 'react-native';
-import FeedPost from './src/components/FeedPost';
-import posts from './src/assets/data/post.json';
-import HomeScreen from './src/screens/HomeScreen';
-import CommentsScreen from './src/screens/CommentsScreen';
-import ProfileScreen from './src/screens/ProfileScreen';
-import EditProfileScreen from './src/screens/EditProfileScreen';
 import Navigation from './src/navigation';
+import {Amplify} from 'aws-amplify';
+import config from './src/aws-exports';
+
+Amplify.configure(config);
 
 const App = () => {
   return (

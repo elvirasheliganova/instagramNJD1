@@ -1,11 +1,12 @@
 import {View, Text, Image, SafeAreaView, FlatList} from 'react-native';
 import React from 'react';
+import {Auth} from 'aws-amplify';
 import user from '../../assets/data/user.json';
 import styles from './styles';
 import Button from '../../components/Button';
 import FeedPost from '../../components/FeedPost';
 import {useNavigation} from '@react-navigation/native';
-import {ProfileNavigationProp} from '../../navigation/types';
+import {ProfileNavigationProp} from '../../types/navigation';
 
 const ProfileHeader = () => {
   const navigation = useNavigation<ProfileNavigationProp>();
@@ -42,7 +43,7 @@ const ProfileHeader = () => {
         {/* Buttons */}
         <View style={styles.buttonsRow}>
           <Button text="Edit Profile" onPress={navigateToEdit} />
-          <Button text="Another Button" onPress={() => console.warn('Edit')} />
+          <Button text="Sign Out" onPress={() => Auth.signOut()} />
         </View>
       </View>
     </SafeAreaView>

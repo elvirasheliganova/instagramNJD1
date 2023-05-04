@@ -5,12 +5,13 @@ import user from '../../assets/data/user.json';
 import ProfileHeader from './ProfileHeader';
 import FeedGreedView from '../../components/Comment/FeedGreedView/FeedGreedView';
 import {IPost} from '../../types/models';
+import {IFeedGreedView} from '../../components/Comment/FeedGreedView/FeedGreedView';
 import {
   MyProfileNavigationProp,
   UserProfileNavigationProp,
   UserProfileRouteProp,
   MyProfileRouteProp,
-} from '../../navigation/types';
+} from '../../types/navigation';
 
 const ProfileScreen = () => {
   const route = useRoute<MyProfileRouteProp | UserProfileRouteProp>();

@@ -3,8 +3,9 @@ import React from 'react';
 import {IPost} from '../../../types/models';
 import FeedGreedItem from './FeedGreedItem';
 
-interface IFeedGreedView {
+export interface IFeedGreedView {
   data: IPost[];
+
   ListHeaderComponent?:
     | React.ComponentType<any>
     | React.ReactElement<any>

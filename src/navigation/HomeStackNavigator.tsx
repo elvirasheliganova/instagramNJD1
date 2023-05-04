@@ -6,7 +6,7 @@ import HomeScreen from '../screens/HomeScreen';
 import {Header} from 'react-native/Libraries/NewAppScreen';
 import logo from '../assets/images/logo.png';
 import {ImageSourcePropType} from 'react-native';
-import {HomeStackNavigatorParamList} from './types';
+import {HomeStackNavigatorParamList} from '../types/navigation';
 
 const Stack = createNativeStackNavigator<HomeStackNavigatorParamList>();
 
