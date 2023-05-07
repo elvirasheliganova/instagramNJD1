@@ -12,6 +12,7 @@ import React, {type PropsWithChildren} from 'react';
 import Navigation from './src/navigation';
 import {Amplify} from 'aws-amplify';
 import config from './src/aws-exports';
+import AuthContextProvider from './src/contexts/AuthContext';
 
 Amplify.configure(config);
 
@@ -20,7 +21,9 @@ const App = () => {
     //<HomeScreen />;
     //<CommentsScreen />
     //<ProfileScreen />
-    <Navigation />
+    <AuthContextProvider>
+      <Navigation />
+    </AuthContextProvider>
   );
 };
 

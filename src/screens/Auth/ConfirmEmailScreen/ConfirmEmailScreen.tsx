@@ -54,7 +54,7 @@ const ConfirmEmailScreen = () => {
       Alert.alert('Ooops', (e as Error).message);
     }
   };
-
+  // console.log(usr);
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.root}>
