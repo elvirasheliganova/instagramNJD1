@@ -7,11 +7,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React"
 
-@interface instagramNJDTests : XCTestCase
+@interface KnitNetTests : XCTestCase
 
 @end
 
-@implementation instagramNJDTests
+@implementation KnitNetTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL (^)(UIView *view))test
 {
