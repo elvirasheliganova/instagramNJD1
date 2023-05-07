@@ -1,4 +1,4 @@
-package com.instagramnjd;
+package com.knitnet;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

@@ -1,4 +1,4 @@
-package com.instagramnjd.newarchitecture.modules;
+package com.knitnet.newarchitecture.modules;
 
 import com.facebook.jni.HybridData;
 import com.facebook.react.ReactPackage;
